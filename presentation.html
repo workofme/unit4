@@ -457,6 +457,7 @@
 
             function render_tau() {
                 // edit_style($('body'), 'background', '#000');
+
                 music('audio/look-listen.mp3');
                 creat_div('container2');
                 creat_div_append('tau', 'container2');
@@ -477,8 +478,34 @@
                     style(200, "left", "600px", $('.tau4'));
 
                 }, 6000)
+                creat_div_append('div1', 'container2');
+                creat_text('', 'h2', 'div1', 'title');
+                $('.tau1').click(function() {
+                    $('.title').text("1 + 1 = 2");
+                    music('audio/equals.mp3')
+                    style(200, "transform", "scale(1.6)", $('h2'))
+                    style(1000, "transform", "scale(1.0)", $('h2'))
+                    style(2000, "transform", "scale(1.6)", $('h2'))
+                    style(3000, "transform", "scale(1.0)", $('h2'))
+                })
+                $('.tau2').click(function() {
+                    alert('abc');
+                })
+                $('.tau3').click(function() {
+
+                    alert('abc')
+
+                })
+                $('.tau4').click(function() {
+
+                    alert('abc');
+                })
+
+
+
 
             }
+
 
 
 
@@ -499,8 +526,8 @@
                 creat_text(text, 'h2', class_append, class_this);
             }
 
-            render()
-            //render_tau()
+            //render()
+            render_tau()
 
 
         })
