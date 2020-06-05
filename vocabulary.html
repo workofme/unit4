@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <style>
+        body {
+            background-image: url('images/bg-obj.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        h3,
+        h4 {
+            color: black;
+            text-align: center;
+            text-shadow: 2px 2px #fff;
+            padding: 5% 0;
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        span {
+            color: red;
+            font-size: 2rem;
+            font-weight: 900;
+            display: inline-block;
+            padding: 0 20px;
+            cursor: pointer;
+            transition: all 1s;
+        }
+        
+        .h4_item {
+            color: red;
+            transition: all 1s;
+            font-weight: 900;
+            display: none;
+        }
+        
+        img {
+            max-width: 100%;
+        }
+        
+        .div {
+            position: absolute;
+            color: red;
+            left: 30%;
+            bottom: 20%;
+        }
+        
+        .div1 {
+            position: absolute;
+            color: red;
+            left: 50%;
+            bottom: 20%;
+        }
+        
+        .div2 {
+            position: absolute;
+            color: red;
+            left: 65%;
+            bottom: 20%;
+        }
+        
+        div.text {
+            position: absolute;
+            top: 50%;
+            right: 20%;
+            display: block;
+            border-radius: 100%;
+            padding: 10px;
+            font-size: 2em;
+        }
+    </style>
+</head>
+
+<body>
+
+    <script src="js/font-awesome.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/function.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        $(document).ready(function() {
+            music('audio/lookandlisten.mp3');
+            creat_div('text-center');
+            creat_div('text');
+            creat_text('Look, listen and repeat.', 'h3', 'text-center', 'title', 'text-center');
+
+            setTimeout(function() {
+                creat_image('images/chim1.png', 'text-center');
+                creat_text('+', 'span', 'text-center', 'span_item');
+                creat_image('images/chim2.png', 'text-center');
+                creat_text('=', 'span', 'text-center', 'span_item', 'text-center');
+                creat_image('images/chim3.png', 'text-center');
+                var span = $('.span_item');
+
+                creat_div('textcenter');
+                creat_text('plus', 'h4', 'text-center', 'h4_item',
+                    'textcenter');
+                span.click(function() {
+                    style(200, "transform", "scale(1.6)", $(this))
+                    style(1000, "transform", "scale(1.0)", $(this))
+                    style(2000, "transform", "scale(1.6)", $(this))
+                    style(3000, "transform", "scale(1.0)", $(this))
+                    var text = $(this).text();
+
+                    if (text == "+") {
+                        $('.h4_item').text('plus');
+                        $('.h4_item').css('display', 'block');
+                        music('audio/plus.mp3')
+                        style(200, "transform", "scale(1.6)", $('.h4_item'))
+                        style(1000, "transform", "scale(1.0)", $('.h4_item'))
+                        style(2000, "transform", "scale(1.6)", $('.h4_item'))
+                        style(3000, "transform", "scale(1.0)", $('.h4_item'))
+                    } else if (text == "=") {
+                        $('.h4_item').css('display', 'block');
+                        $('.h4_item').text('equals');
+                        music('audio/equals.mp3')
+                        style(200, "transform", "scale(1.6)", $('.h4_item'))
+                        style(1000, "transform", "scale(1.0)", $('.h4_item'))
+                        style(2000, "transform", "scale(1.6)", $('.h4_item'))
+                        style(3000, "transform", "scale(1.0)", $('.h4_item'))
+                    }
+                })
+                $("img[src='images/chim1.png']").click(function() {
+                    creat_div('div');
+
+                    creat_text('2', 'h2', 'div', 'h2_item');
+
+
+                })
+                $("img[src='images/chim2.png']").click(function() {
+
+                    creat_div('div1');
+
+                    creat_text('4', 'h2', 'div1', 'h2_item');
+
+                })
+                $("img[src='images/chim3.png']").click(function() {
+
+                    creat_div('div2');
+
+                    creat_text('6', 'h2', 'div2', 'h2_item');
+
+                })
+                $('.text').click(function() {
+                    $('.h4_item').text('Three plus two equals five.');
+                    $('.h4_item').css('display', 'block');
+                    music('audio/Threetow.mp3')
+                    style(200, "transform", "scale(1.6)", $('.h4_item'))
+                    style(1000, "transform", "scale(1.0)", $('.h4_item'))
+                    style(2000, "transform", "scale(1.6)", $('.h4_item'))
+                    style(3000, "transform", "scale(1.0)", $('.h4_item'))
+                })
+            }, 2000)
+            setTimeout(function() {
+                creat_element('h5', 'a', 'text', 0);
+                $('h5').attr('class', 'fas fa-question-circle')
+                edit_style($('h5'), 'color', 'red')
+            }, 2000)
+
+
+
+
+        })
+    </script>
+</body>
+
+</html>

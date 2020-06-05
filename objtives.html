@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <style>
+        body {
+            background-image: url('images/bg.gif');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        h3,
+        h4 {
+            color: black;
+            text-align: center;
+            text-shadow: 2px 2px #fff;
+            padding: 5% 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <script src="js/font-awesome.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/function.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        $(document).ready(function() {
+            music('audio/look-listen.mp3');
+            creat_div('text-center');
+            creat_text('Look, listen and repeat the addition  within ten.', 'h3', 'text-center', 'title', 'text-center');
+            setTimeout(function() {
+                music('audio/readandwrite.mp3')
+                creat_text('Read and write the numbers and the signs “+” or “=” to complete the addition.', 'h4', 'text-center', 'title', 'text-center')
+            }, 3500)
+
+        })
+    </script>
+</body>
+
+</html>
