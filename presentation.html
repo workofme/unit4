@@ -33,6 +33,24 @@
             transition: all 2s;
         }
         
+        .tau {
+            position: relative;
+        }
+        
+        .tau1,
+        .tau2,
+        .tau3,
+        .tau4 {
+            width: 200px;
+            position: absolute;
+            left: 80%;
+            top: 200px;
+            transition: all 3s;
+            display: inline-block;
+            padding: 0px 20px;
+            cursor: pointer;
+        }
+        
         img {
             max-width: 70%;
             transition: all 2s;
@@ -114,6 +132,12 @@
             right: 10px;
         }
         
+        #btn-prew {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+        }
+        
         div.text {
             position: absolute;
             top: 20%;
@@ -164,255 +188,297 @@
     <script src="js/main.js"></script>
     <script>
         $(document).ready(function() {
-            var obj = {
-                render: function() {
-                    music('audio/look-listen.mp3');
-                    creat_div('container1');
-                    creat_div_append('tao', 'container1');
-                    creat_image('images/giotao.png', 'tao', 'giotao');
-                    setTimeout(function() {
-                            creat_image('images/atao.png', 'tao', 'atao');
-                            style(200, "bottom", "22rem", $('.atao'));
-                            style(200, "left", "10rem", $('.atao'));
-                            creat_image('images/atao.png', 'tao', 'atao1');
-                        }, 1000)
-                        // creat_item(1000, 'images/atao.png', 'tao', 'atao')
-                    setTimeout(function() {
 
-                        style(200, "bottom", "26rem", $('.atao1'));
-                        style(200, "left", "15rem", $('.atao1'));
-                        creat_image('images/atao.png', 'tao', 'atao2');
-                    }, 2000)
-                    setTimeout(function() {
+            function render() {
+                music('audio/look-listen.mp3');
+                creat_div('container1');
+                creat_div_append('tao', 'container1');
+                creat_image('images/giotao.png', 'tao', 'giotao');
 
-                        style(200, "bottom", "27rem", $('.atao2'));
-                        style(200, "left", "10rem", $('.atao2'));
-                        creat_image('images/atao.png', 'tao', 'atao3');
-                    }, 3000)
-                    setTimeout(function() {
-                        creat_div_append('div', 'container1');
-                        creat_text('+', 'h2', 'div', 'title');
-                    }, 3000)
-                    setTimeout(function() {
-                        style(200, "bottom", "25rem", $('.atao3'));
-                        style(200, "left", "27rem", $('.atao3'));
-                        creat_image('images/atao.png', 'tao', 'atao4');
-                    }, 5000)
-                    setTimeout(function() {
-                        style(200, "bottom", "25rem", $('.atao4'));
-                        style(200, "left", "32rem", $('.atao4'));
-                        creat_image('images/atao.png', 'tao', 'atao5');
-                    }, 7000)
-                    setTimeout(function() {
-                        creat_div_append('div1', 'container1');
-                        creat_text('=', 'h2', 'div1', 'title');
-                    }, 8000)
-                    setTimeout(function() {
-                        creat_image('images/tao5.png', 'tao', 'atao6');
-                        style(800, "transform", "scale(1.6)", $('.atao6'))
-                        style(2000, "transform", "scale(1.0)", $('.atao6'))
-                        style(2800, "transform", "scale(1.6)", $('.atao6'))
-                        style(3600, "transform", "scale(1.0)", $('.atao6'))
-                    }, 10000)
-                    setTimeout(function() {
-                        var text1 = $('.title');
-                        creat_div_append('text2', 'container1');
-                        creat_text('', 'h4', 'text2', 'h4_item');
-                        text1.click(function() {
-                            style(200, "transform", "scale(1.6)", $(this))
-                            style(1000, "transform", "scale(1.0)", $(this))
-                            style(2000, "transform", "scale(1.6)", $(this))
-                            style(3000, "transform", "scale(1.0)", $(this))
-                            var text = $(this).text();
+                setTimeout(function() {
+                        creat_image('images/atao.png', 'tao', 'atao');
+                        style(200, "bottom", "22rem", $('.atao'));
+                        style(200, "left", "10rem", $('.atao'));
+                        creat_image('images/atao.png', 'tao', 'atao1');
+                    }, 1000)
+                    // creat_item(1000, 'images/atao.png', 'tao', 'atao')
+                setTimeout(function() {
 
-                            if (text == "+") {
-                                $('.h4_item').text('plus');
-                                $('.h4_item').css('display', 'block');
-                                music('audio/plus.mp3')
-                                style(200, "transform", "scale(1.6)", $('.h4_item'))
-                                style(1000, "transform", "scale(1.0)", $('.h4_item'))
-                                style(2000, "transform", "scale(1.6)", $('.h4_item'))
-                                style(3000, "transform", "scale(1.0)", $('.h4_item'))
-                            } else if (text == "=") {
-                                $('.h4_item').css('display', 'block');
-                                $('.h4_item').text('equals');
-                                music('audio/equals.mp3')
-                                style(200, "transform", "scale(1.6)", $('.h4_item'))
-                                style(1000, "transform", "scale(1.0)", $('.h4_item'))
-                                style(2000, "transform", "scale(1.6)", $('.h4_item'))
-                                style(3000, "transform", "scale(1.0)", $('.h4_item'))
-                            }
-                        })
-                        creat_div('textcenter');
-                        creat_div('text');
-                        creat_element('h5', 'a', 'text', 0);
-                        $('h5').attr('class', 'fas fa-question-circle')
-                        edit_style($('h5'), 'color', 'red')
+                    style(200, "bottom", "26rem", $('.atao1'));
+                    style(200, "left", "15rem", $('.atao1'));
+                    creat_image('images/atao.png', 'tao', 'atao2');
+                }, 2000)
+                setTimeout(function() {
 
-                        creat_element('button', 'btn-primary', 'container1', 0);
-                        $('button').text('next')
-                        add_class('button', 'btn', 0);
-                        add_class('button', 'next', 0);
-                        add_id('button', 'btn-next', 0);
-                        $('.text').click(function() {
-                            $('.h4_item').text('Three plus two equals five.');
+                    style(200, "bottom", "27rem", $('.atao2'));
+                    style(200, "left", "10rem", $('.atao2'));
+                    creat_image('images/atao.png', 'tao', 'atao3');
+                }, 3000)
+                setTimeout(function() {
+                    creat_div_append('div', 'container1');
+                    creat_text('+', 'h2', 'div', 'title');
+                }, 3000)
+                setTimeout(function() {
+                    style(200, "bottom", "25rem", $('.atao3'));
+                    style(200, "left", "27rem", $('.atao3'));
+                    creat_image('images/atao.png', 'tao', 'atao4');
+                }, 5000)
+                setTimeout(function() {
+                    style(200, "bottom", "25rem", $('.atao4'));
+                    style(200, "left", "32rem", $('.atao4'));
+                    creat_image('images/atao.png', 'tao', 'atao5');
+                }, 7000)
+                setTimeout(function() {
+                    creat_div_append('div1', 'container1');
+                    creat_text('=', 'h2', 'div1', 'title');
+                }, 8000)
+                setTimeout(function() {
+                    creat_image('images/tao5.png', 'tao', 'atao6');
+                    style(800, "transform", "scale(1.6)", $('.atao6'))
+                    style(2000, "transform", "scale(1.0)", $('.atao6'))
+                    style(2800, "transform", "scale(1.6)", $('.atao6'))
+                    style(3600, "transform", "scale(1.0)", $('.atao6'))
+                }, 10000)
+                setTimeout(function() {
+                    var text1 = $('.title');
+                    creat_div_append('text2', 'container1');
+                    creat_text('', 'h4', 'text2', 'h4_item');
+                    text1.click(function() {
+                        style(200, "transform", "scale(1.6)", $(this))
+                        style(1000, "transform", "scale(1.0)", $(this))
+                        style(2000, "transform", "scale(1.6)", $(this))
+                        style(3000, "transform", "scale(1.0)", $(this))
+                        var text = $(this).text();
+
+                        if (text == "+") {
+                            $('.h4_item').text('plus');
                             $('.h4_item').css('display', 'block');
-                            music('audio/Threetow.mp3')
+                            music('audio/plus.mp3')
                             style(200, "transform", "scale(1.6)", $('.h4_item'))
                             style(1000, "transform", "scale(1.0)", $('.h4_item'))
                             style(2000, "transform", "scale(1.6)", $('.h4_item'))
                             style(3000, "transform", "scale(1.0)", $('.h4_item'))
-                        })
-                        creat_div('row');
-                        $(".atao").click(number3);
-                        $(".atao1").click(number3);
-                        $(".atao2").click(number3);
-                        $(".atao3").click(number2);
-                        $(".atao4").click(number2);
-                        $(".atao6").click(number5);
-
-                        function render_cam() {
-                            music('audio/look-listen.mp3');
-                            creat_div('container2');
-                            creat_div_append('tao', 'container2');
-                            creat_image('images/giocam.png', 'tao', 'giotao');
-                            setTimeout(function() {
-                                    creat_image('images/acam.png', 'tao', 'atao');
-                                    style(200, "bottom", "20rem", $('.atao'));
-                                    style(200, "left", "10rem", $('.atao'));
-                                    creat_image('images/acam.png', 'tao', 'atao1');
-                                }, 1000)
-                                // creat_item(1000, 'images/atao.png', 'tao', 'atao')
-                            setTimeout(function() {
-
-                                style(200, "bottom", "25rem", $('.atao1'));
-                                style(200, "left", "10rem", $('.atao1'));
-                                creat_image('images/acam.png', 'tao', 'atao2');
-                            }, 2000)
-                            setTimeout(function() {
-
-                                style(200, "bottom", "30rem", $('.atao2'));
-                                style(200, "left", "10rem", $('.atao2'));
-                                creat_image('images/acam.png', 'tao', 'atao3');
-                            }, 3000)
-                            setTimeout(function() {
-                                creat_div_append('div', 'container2');
-                                creat_text('+', 'h2', 'div', 'title');
-                            }, 5000)
-                            setTimeout(function() {
-                                style(200, "bottom", "30rem", $('.atao3'));
-                                style(200, "left", "15rem", $('.atao3'));
-                                creat_image('images/acam.png', 'tao', 'atao4');
-                            }, 7000)
-                            setTimeout(function() {
-                                style(200, "bottom", "25rem", $('.atao4'));
-                                style(200, "left", "15rem", $('.atao4'));
-                                creat_image('images/acam.png', 'tao', 'atao5');
-                            }, 9000)
-                            setTimeout(function() {
-                                style(200, "bottom", "30rem", $('.atao5'));
-                                style(200, "left", "30rem", $('.atao5'));
-                                creat_image('images/acam.png', 'tao', 'atao7');
-                            }, 11000)
-                            setTimeout(function() {
-                                style(200, "bottom", "25rem", $('.atao7'));
-                                style(200, "left", "30rem", $('.atao7'));
-                                creat_image('images/acam.png', 'tao', 'atao8');
-                            }, 13000)
-                            setTimeout(function() {
-                                style(200, "bottom", "20rem", $('.atao8'));
-                                style(200, "left", "30rem", $('.atao8'));
-                                creat_image('images/acam.png', 'tao', 'atao9');
-                            }, 15000)
-                            setTimeout(function() {
-                                creat_div_append('div1', 'container2');
-                                creat_text('=', 'h2', 'div1', 'title');
-                            }, 17000)
-                            setTimeout(function() {
-                                creat_image('images/cam5.png', 'tao', 'atao6')
-                                style(800, "transform", "scale(1.6)", $('.atao6'))
-                                style(2000, "transform", "scale(1.0)", $('.atao6'))
-                                style(2800, "transform", "scale(1.6)", $('.atao6'))
-                                style(3600, "transform", "scale(1.0)", $('.atao6'))
-                            }, 19000)
-                            setTimeout(function() {
-                                var text1 = $('.title');
-                                creat_div_append('text2', 'container2');
-                                creat_text('', 'h4', 'text2', 'h4_item');
-                                text1.click(function() {
-                                    style(200, "transform", "scale(1.6)", $(this))
-                                    style(1000, "transform", "scale(1.0)", $(this))
-                                    style(2000, "transform", "scale(1.6)", $(this))
-                                    style(3000, "transform", "scale(1.0)", $(this))
-                                    var text = $(this).text();
-
-                                    if (text == "+") {
-                                        $('.h4_item').text('plus');
-                                        $('.h4_item').css('display', 'block');
-                                        music('audio/plus.mp3')
-                                        style(200, "transform", "scale(1.6)", $('.h4_item'))
-                                        style(1000, "transform", "scale(1.0)", $('.h4_item'))
-                                        style(2000, "transform", "scale(1.6)", $('.h4_item'))
-                                        style(3000, "transform", "scale(1.0)", $('.h4_item'))
-                                    } else if (text == "=") {
-                                        $('.h4_item').css('display', 'block');
-                                        $('.h4_item').text('equals');
-                                        music('audio/equals.mp3')
-                                        style(200, "transform", "scale(1.6)", $('.h4_item'))
-                                        style(1000, "transform", "scale(1.0)", $('.h4_item'))
-                                        style(2000, "transform", "scale(1.6)", $('.h4_item'))
-                                        style(3000, "transform", "scale(1.0)", $('.h4_item'))
-                                    }
-                                })
-                                creat_div('textcenter');
-                                creat_div('text');
-                                creat_element('h5', 'a', 'text', 0);
-                                $('h5').attr('class', 'fas fa-question-circle')
-                                edit_style($('h5'), 'color', 'red')
-
-                                creat_element('button', 'btn-primary', 'container2', 0);
-                                $('button').text('prew')
-                                add_class('button', 'btn', 0);
-                                add_class('button', 'next', 0);
-                                add_id('button', 'btn-prew', 0);
-                                $('.text').click(function() {
-                                    $('.h4_item').text('Three plus two equals five.');
-                                    $('.h4_item').css('display', 'block');
-                                    music('audio/Threetow.mp3')
-                                    style(200, "transform", "scale(1.6)", $('.h4_item'))
-                                    style(1000, "transform", "scale(1.0)", $('.h4_item'))
-                                    style(2000, "transform", "scale(1.6)", $('.h4_item'))
-                                    style(3000, "transform", "scale(1.0)", $('.h4_item'))
-                                })
-                                creat_div('row');
-                                $(".atao").click(number3);
-                                $(".atao1").click(number3);
-                                $(".atao2").click(number3);
-                                $(".atao3").click(number2);
-                                $(".atao4").click(number2);
-                                $(".atao6").click(number5);
-
-                                $("img[src='images/atao6.png']").click(number5);
-                                var btn_prew = $('#btn-prew')
-                                btn_prew.click(function() {
-                                    delete_element($('div'));
-                                    delete_element($('h5'));
-                                    obj.render();
-
-                                })
-                            }, 21000)
+                        } else if (text == "=") {
+                            $('.h4_item').css('display', 'block');
+                            $('.h4_item').text('equals');
+                            music('audio/equals.mp3')
+                            style(200, "transform", "scale(1.6)", $('.h4_item'))
+                            style(1000, "transform", "scale(1.0)", $('.h4_item'))
+                            style(2000, "transform", "scale(1.6)", $('.h4_item'))
+                            style(3000, "transform", "scale(1.0)", $('.h4_item'))
                         }
-                        $("img[src='images/atao6.png']").click(number5);
-                        var btn_next = $('#btn-next')
-                        btn_next.click(function() {
-                            delete_element($('div'));
-                            delete_element($('h5'));
-                            render_cam()
-                        })
-                    }, 12000)
-                }
+                    })
+                    creat_div('textcenter');
+                    creat_div('text');
+                    creat_element('h5', 'a', 'text', 0);
+                    $('h5').attr('class', 'fas fa-question-circle')
+                    edit_style($('h5'), 'color', 'red')
+
+
+                    $('.text').click(function() {
+                        $('.h4_item').text('Three plus two equals five.');
+                        $('.h4_item').css('display', 'block');
+                        music('audio/Threetow.mp3')
+                        style(200, "transform", "scale(1.6)", $('.h4_item'))
+                        style(1000, "transform", "scale(1.0)", $('.h4_item'))
+                        style(2000, "transform", "scale(1.6)", $('.h4_item'))
+                        style(3000, "transform", "scale(1.0)", $('.h4_item'))
+                    })
+                    creat_div('row');
+                    $(".atao").click(number3);
+                    $(".atao1").click(number3);
+                    $(".atao2").click(number3);
+                    $(".atao3").click(number2);
+                    $(".atao4").click(number2);
+                    $(".atao6").click(number5);
+
+
+                    $("img[src='images/atao6.png']").click(number5);
+                    creat_element('button', 'btn-primary', 'container1', 0);
+                    $('button').text('next')
+                    add_class('button', 'btn', 0);
+                    add_class('button', 'next', 0);
+                    add_id('button', 'btn-next', 0);
+                    var btn_next = $('#btn-next')
+                    btn_next.click(function() {
+                        delete_element($('.container1'));
+                        delete_element($('div'));
+                        delete_element($('h5'));
+                        render_cam()
+
+                    })
+                }, 12000)
             }
 
+            function render_cam() {
+                music('audio/look-listen.mp3');
+                creat_div('container2');
+                creat_div_append('tao', 'container2');
+                creat_image('images/giocam.png', 'tao', 'giotao');
+
+                setTimeout(function() {
+                        creat_image('images/acam.png', 'tao', 'atao');
+                        style(200, "bottom", "20rem", $('.atao'));
+                        style(200, "left", "10rem", $('.atao'));
+                        creat_image('images/acam.png', 'tao', 'atao1');
+                    }, 1000)
+                    // creat_item(1000, 'images/atao.png', 'tao', 'atao')
+                setTimeout(function() {
+
+                    style(200, "bottom", "25rem", $('.atao1'));
+                    style(200, "left", "10rem", $('.atao1'));
+                    creat_image('images/acam.png', 'tao', 'atao2');
+                }, 2000)
+                setTimeout(function() {
+
+                    style(200, "bottom", "30rem", $('.atao2'));
+                    style(200, "left", "10rem", $('.atao2'));
+                    creat_image('images/acam.png', 'tao', 'atao3');
+                }, 3000)
+                setTimeout(function() {
+                    creat_div_append('div', 'container2');
+                    creat_text('+', 'h2', 'div', 'title');
+                }, 5000)
+                setTimeout(function() {
+                    style(200, "bottom", "30rem", $('.atao3'));
+                    style(200, "left", "15rem", $('.atao3'));
+                    creat_image('images/acam.png', 'tao', 'atao4');
+                }, 7000)
+                setTimeout(function() {
+                    style(200, "bottom", "25rem", $('.atao4'));
+                    style(200, "left", "15rem", $('.atao4'));
+                    creat_image('images/acam.png', 'tao', 'atao5');
+                }, 9000)
+                setTimeout(function() {
+                    style(200, "bottom", "30rem", $('.atao5'));
+                    style(200, "left", "30rem", $('.atao5'));
+                    creat_image('images/acam.png', 'tao', 'atao7');
+                }, 11000)
+                setTimeout(function() {
+                    style(200, "bottom", "25rem", $('.atao7'));
+                    style(200, "left", "30rem", $('.atao7'));
+                    creat_image('images/acam.png', 'tao', 'atao8');
+                }, 13000)
+                setTimeout(function() {
+                    style(200, "bottom", "20rem", $('.atao8'));
+                    style(200, "left", "30rem", $('.atao8'));
+                    creat_image('images/acam.png', 'tao', 'atao9');
+                }, 15000)
+                setTimeout(function() {
+                    creat_div_append('div1', 'container2');
+                    creat_text('=', 'h2', 'div1', 'title');
+                }, 17000)
+                setTimeout(function() {
+                    creat_image('images/cam5.png', 'tao', 'atao6')
+                    style(800, "transform", "scale(1.6)", $('.atao6'))
+                    style(2000, "transform", "scale(1.0)", $('.atao6'))
+                    style(2800, "transform", "scale(1.6)", $('.atao6'))
+                    style(3600, "transform", "scale(1.0)", $('.atao6'))
+                }, 19000)
+                setTimeout(function() {
+                    var text1 = $('.title');
+                    creat_div_append('text2', 'container2');
+                    creat_text('', 'h4', 'text2', 'h4_item');
+                    text1.click(function() {
+                        style(200, "transform", "scale(1.6)", $(this))
+                        style(1000, "transform", "scale(1.0)", $(this))
+                        style(2000, "transform", "scale(1.6)", $(this))
+                        style(3000, "transform", "scale(1.0)", $(this))
+                        var text = $(this).text();
+
+                        if (text == "+") {
+                            $('.h4_item').text('plus');
+                            $('.h4_item').css('display', 'block');
+                            music('audio/plus.mp3')
+                            style(200, "transform", "scale(1.6)", $('.h4_item'))
+                            style(1000, "transform", "scale(1.0)", $('.h4_item'))
+                            style(2000, "transform", "scale(1.6)", $('.h4_item'))
+                            style(3000, "transform", "scale(1.0)", $('.h4_item'))
+                        } else if (text == "=") {
+                            $('.h4_item').css('display', 'block');
+                            $('.h4_item').text('equals');
+                            music('audio/equals.mp3')
+                            style(200, "transform", "scale(1.6)", $('.h4_item'))
+                            style(1000, "transform", "scale(1.0)", $('.h4_item'))
+                            style(2000, "transform", "scale(1.6)", $('.h4_item'))
+                            style(3000, "transform", "scale(1.0)", $('.h4_item'))
+                        }
+                    })
+                    creat_div('textcenter');
+                    creat_div('text');
+                    creat_element('h5', 'a', 'text', 0);
+                    $('h5').attr('class', 'fas fa-question-circle')
+                    edit_style($('h5'), 'color', 'red')
+
+
+                    $('.text').click(function() {
+                        $('.h4_item').text('Three plus two equals five.');
+                        $('.h4_item').css('display', 'block');
+                        music('audio/Threetow.mp3')
+                        style(200, "transform", "scale(1.6)", $('.h4_item'))
+                        style(1000, "transform", "scale(1.0)", $('.h4_item'))
+                        style(2000, "transform", "scale(1.6)", $('.h4_item'))
+                        style(3000, "transform", "scale(1.0)", $('.h4_item'))
+                    })
+                    creat_div('row');
+                    $(".atao").click(number3);
+                    $(".atao1").click(number3);
+                    $(".atao2").click(number3);
+                    $(".atao3").click(number2);
+                    $(".atao4").click(number2);
+                    $(".atao6").click(number5);
+                    creat_element('button', 'btn-primary', 'container2', 0);
+
+                    add_class('button', 'btn', 0);
+                    add_class('button', 'prew', 0);
+                    add_id('button', 'btn-prew', 0);
+                    creat_element('button', 'btn-primary', 'container2', 0);
+                    $('#btn-prew').text('prew')
+                    add_class('button', 'btn', 1);
+                    add_class('button', 'next', 1);
+                    add_id('button', 'btn-next', 1);
+                    $('#btn-next').text('next')
+                    $("img[src='images/atao6.png']").click(number5);
+                    var btn_prew = $('#btn-prew')
+                    btn_prew.click(function() {
+                        delete_element($('div'));
+                        delete_element($('h5'));
+                        render();
+
+                    })
+                    var btn_next = $('#btn-next')
+                    btn_next.click(function() {
+                        delete_element($('div'));
+                        delete_element($('h5'));
+                        render_tau()
+                    })
+                }, 21000)
+            }
+
+            function render_tau() {
+                // edit_style($('body'), 'background', '#000');
+                music('audio/look-listen.mp3');
+                creat_div('container2');
+                creat_div_append('tau', 'container2');
+                creat_image('images/tau1.png', 'tau', 'tau1');
+                setTimeout(function() {
+                    style(200, "left", "0", $('.tau1'));
+                    creat_image('images/tau2.png', 'tau', 'tau2');
+                }, 2000)
+                setTimeout(function() {
+                    style(200, "left", "200px", $('.tau2'));
+                    creat_image('images/tau3.png', 'tau', 'tau3');
+                }, 4000)
+                setTimeout(function() {
+                    style(200, "left", "400px", $('.tau3'));
+                    creat_image('images/tau4.png', 'tau', 'tau4');
+                }, 4000)
+                setTimeout(function() {
+                    style(200, "left", "600px", $('.tau4'));
+
+                }, 6000)
+
+            }
 
 
 
@@ -432,10 +498,9 @@
 
                 creat_text(text, 'h2', class_append, class_this);
             }
-            obj.render1 = function() {
 
-            }
-            obj.render();
+            render()
+            //render_tau()
 
 
         })
