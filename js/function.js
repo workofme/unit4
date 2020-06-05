@@ -71,3 +71,11 @@ function creat_item(time, url, class_apped, class_this) {
 
     }, time)
 }
+function load_result(text , amthanh){
+    $('.title').text(text);
+    music(amthanh)
+    style(200, "transform", "scale(1.6)", $('h2'))
+    style(1000, "transform", "scale(1.0)", $('h2'))
+    style(2000, "transform", "scale(1.6)", $('h2'))
+    style(3000, "transform", "scale(1.0)", $('h2'))
+}

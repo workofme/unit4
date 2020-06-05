@@ -40,7 +40,8 @@
         .tau1,
         .tau2,
         .tau3,
-        .tau4 {
+        .tau4,
+        .tau5 {
             width: 200px;
             position: absolute;
             left: 80%;
@@ -174,6 +175,9 @@
             top: 50%;
             left: 60%;
             font-size: 2em;
+        }
+        .div_center {
+            text-align: center;
         }
     </style>
 </head>
@@ -462,45 +466,40 @@
                 creat_div('container2');
                 creat_div_append('tau', 'container2');
                 creat_image('images/tau1.png', 'tau', 'tau1');
+                creat_image('images/tau2.png', 'tau', 'tau2');
+                creat_image('images/tau3.png', 'tau', 'tau3');
+                creat_image('images/tau4.png', 'tau', 'tau4');
                 setTimeout(function() {
                     style(200, "left", "0", $('.tau1'));
-                    creat_image('images/tau2.png', 'tau', 'tau2');
+                    
                 }, 2000)
                 setTimeout(function() {
                     style(200, "left", "200px", $('.tau2'));
-                    creat_image('images/tau3.png', 'tau', 'tau3');
+                    
                 }, 4000)
                 setTimeout(function() {
                     style(200, "left", "400px", $('.tau3'));
-                    creat_image('images/tau4.png', 'tau', 'tau4');
+                    
                 }, 4000)
                 setTimeout(function() {
                     style(200, "left", "600px", $('.tau4'));
-
+                    
                 }, 6000)
-                creat_div_append('div1', 'container2');
-                creat_text('', 'h2', 'div1', 'title');
+                creat_div_append('div_center', 'container2');
+                creat_text('', 'h2', 'div_center', 'h4_item');
                 $('.tau1').click(function() {
-                    $('.title').text("1 + 1 = 2");
-                    music('audio/equals.mp3')
-                    style(200, "transform", "scale(1.6)", $('h2'))
-                    style(1000, "transform", "scale(1.0)", $('h2'))
-                    style(2000, "transform", "scale(1.6)", $('h2'))
-                    style(3000, "transform", "scale(1.0)", $('h2'))
+                    load_result("1 + 1 = 2 ", "audio/look-listen.mp3")
                 })
                 $('.tau2').click(function() {
-                    alert('abc');
+                    load_result("1 + 1 = 2 ", "audio/look-listen.mp3")
                 })
                 $('.tau3').click(function() {
-
-                    alert('abc')
-
+                    load_result("1 + 1 = 2 ", "audio/look-listen.mp3")
                 })
                 $('.tau4').click(function() {
-
-                    alert('abc');
+                    load_result("1 + 1 = 2 ", "audio/look-listen.mp3")
                 })
-
+                
 
 
 
