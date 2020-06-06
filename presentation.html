@@ -26,7 +26,7 @@
             height: 80%;
         }
         
-        .tao {
+        .tao,.cam {
             position: absolute;
             bottom: 0px;
             display: flex;
@@ -193,57 +193,64 @@
     <script>
         $(document).ready(function() {
 
-            function render() {
+            var render = function() {
+               
                 music('audio/look-listen.mp3');
                 creat_div('container1');
                 creat_div_append('tao', 'container1');
                 creat_image('images/giotao.png', 'tao', 'giotao');
-
-                setTimeout(function() {
+                var start =   setTimeout(function() {
+                        creat_image('images/atao.png', 'tao', 'atao');
+                        style(200, "bottom", "22rem", $('.atao'));
+                        style(200, "left", "10rem", $('.atao'));
+                        creat_image('images/atao.png', 'tao', 'atao1');
+                    }, 1000)
+               
+                  var tao =   setTimeout(function() {
                         creat_image('images/atao.png', 'tao', 'atao');
                         style(200, "bottom", "22rem", $('.atao'));
                         style(200, "left", "10rem", $('.atao'));
                         creat_image('images/atao.png', 'tao', 'atao1');
                     }, 1000)
                     // creat_item(1000, 'images/atao.png', 'tao', 'atao')
-                setTimeout(function() {
+              var tao1 =  setTimeout(function() {
 
                     style(200, "bottom", "26rem", $('.atao1'));
                     style(200, "left", "15rem", $('.atao1'));
                     creat_image('images/atao.png', 'tao', 'atao2');
                 }, 2000)
-                setTimeout(function() {
+                var tao2 =  setTimeout(function() {
 
                     style(200, "bottom", "27rem", $('.atao2'));
                     style(200, "left", "10rem", $('.atao2'));
                     creat_image('images/atao.png', 'tao', 'atao3');
                 }, 3000)
-                setTimeout(function() {
+                var tao3  =  setTimeout(function() {
                     creat_div_append('div', 'container1');
                     creat_text('+', 'h2', 'div', 'title');
                 }, 3000)
-                setTimeout(function() {
+                var tao4 =  setTimeout(function() {
                     style(200, "bottom", "25rem", $('.atao3'));
                     style(200, "left", "27rem", $('.atao3'));
                     creat_image('images/atao.png', 'tao', 'atao4');
                 }, 5000)
-                setTimeout(function() {
+                var tao5 =   setTimeout(function() {
                     style(200, "bottom", "25rem", $('.atao4'));
                     style(200, "left", "32rem", $('.atao4'));
                     creat_image('images/atao.png', 'tao', 'atao5');
                 }, 7000)
-                setTimeout(function() {
+               var tao6 = setTimeout(function() {
                     creat_div_append('div1', 'container1');
                     creat_text('=', 'h2', 'div1', 'title');
                 }, 8000)
-                setTimeout(function() {
+                var tao7 =  setTimeout(function() {
                     creat_image('images/tao5.png', 'tao', 'atao6');
                     style(800, "transform", "scale(1.6)", $('.atao6'))
                     style(2000, "transform", "scale(1.0)", $('.atao6'))
                     style(2800, "transform", "scale(1.6)", $('.atao6'))
                     style(3600, "transform", "scale(1.0)", $('.atao6'))
                 }, 10000)
-                setTimeout(function() {
+                var tao8 =   setTimeout(function() {
                     var text1 = $('.title');
                     creat_div_append('text2', 'container1');
                     creat_text('', 'h4', 'text2', 'h4_item');
@@ -298,7 +305,12 @@
 
 
                     $("img[src='images/atao6.png']").click(number5);
-                    creat_element('button', 'btn-primary', 'container1', 0);
+                    
+                }, 12000)
+                
+                
+                
+                creat_element('button', 'btn-primary', 'container1', 0);
                     $('button').text('next')
                     add_class('button', 'btn', 0);
                     add_class('button', 'next', 0);
@@ -308,78 +320,87 @@
                         delete_element($('.container1'));
                         delete_element($('div'));
                         delete_element($('h5'));
+                        delete_element($('.tao'));
+                        clearTime(tao)
+                        clearTime(tao1)
+                        clearTime(tao2)
+                        clearTime(tao3)
+                        clearTime(tao4)
+                        clearTime(tao5)
+                        clearTime(tao6)
+                        clearTime(tao7)
+                        clearTime(tao8)
                         render_cam()
-
                     })
-                }, 12000)
+                
             }
 
             function render_cam() {
+                
                 music('audio/look-listen.mp3');
                 creat_div('container2');
-                creat_div_append('tao', 'container2');
-                creat_image('images/giocam.png', 'tao', 'giotao');
-
-                setTimeout(function() {
-                        creat_image('images/acam.png', 'tao', 'atao');
+                creat_div_append('cam', 'container2');
+                creat_image('images/giocam.png', 'cam', 'giotao');
+               var cam = setTimeout(function() {
+                        creat_image('images/acam.png', 'cam', 'atao');
                         style(200, "bottom", "20rem", $('.atao'));
                         style(200, "left", "10rem", $('.atao'));
                         creat_image('images/acam.png', 'tao', 'atao1');
                     }, 1000)
                     // creat_item(1000, 'images/atao.png', 'tao', 'atao')
-                setTimeout(function() {
+                    var cam1 =  setTimeout(function() {
 
                     style(200, "bottom", "25rem", $('.atao1'));
                     style(200, "left", "10rem", $('.atao1'));
-                    creat_image('images/acam.png', 'tao', 'atao2');
+                    creat_image('images/acam.png', 'cam', 'atao2');
                 }, 2000)
-                setTimeout(function() {
+                var cam2 = setTimeout(function() {
 
                     style(200, "bottom", "30rem", $('.atao2'));
                     style(200, "left", "10rem", $('.atao2'));
-                    creat_image('images/acam.png', 'tao', 'atao3');
+                    creat_image('images/acam.png', 'cam', 'atao3');
                 }, 3000)
-                setTimeout(function() {
+                var cam3 =   setTimeout(function() {
                     creat_div_append('div', 'container2');
                     creat_text('+', 'h2', 'div', 'title');
                 }, 5000)
-                setTimeout(function() {
+                var cam4 =  setTimeout(function() {
                     style(200, "bottom", "30rem", $('.atao3'));
                     style(200, "left", "15rem", $('.atao3'));
-                    creat_image('images/acam.png', 'tao', 'atao4');
+                    creat_image('images/acam.png', 'cam', 'atao4');
                 }, 7000)
-                setTimeout(function() {
+                var cam5 =   setTimeout(function() {
                     style(200, "bottom", "25rem", $('.atao4'));
                     style(200, "left", "15rem", $('.atao4'));
-                    creat_image('images/acam.png', 'tao', 'atao5');
+                    creat_image('images/acam.png', 'cam', 'atao5');
                 }, 9000)
-                setTimeout(function() {
+                var cam6 =  setTimeout(function() {
                     style(200, "bottom", "30rem", $('.atao5'));
                     style(200, "left", "30rem", $('.atao5'));
-                    creat_image('images/acam.png', 'tao', 'atao7');
+                    creat_image('images/acam.png', 'cam', 'atao7');
                 }, 11000)
-                setTimeout(function() {
+                var cam7 =   setTimeout(function() {
                     style(200, "bottom", "25rem", $('.atao7'));
                     style(200, "left", "30rem", $('.atao7'));
-                    creat_image('images/acam.png', 'tao', 'atao8');
+                    creat_image('images/acam.png', 'cam', 'atao8');
                 }, 13000)
-                setTimeout(function() {
+                var cam8 =   setTimeout(function() {
                     style(200, "bottom", "20rem", $('.atao8'));
                     style(200, "left", "30rem", $('.atao8'));
-                    creat_image('images/acam.png', 'tao', 'atao9');
+                    creat_image('images/acam.png', 'cam', 'atao9');
                 }, 15000)
-                setTimeout(function() {
+                var cam9 =  setTimeout(function() {
                     creat_div_append('div1', 'container2');
                     creat_text('=', 'h2', 'div1', 'title');
                 }, 17000)
-                setTimeout(function() {
+                var cam10 =   setTimeout(function() {
                     creat_image('images/cam5.png', 'tao', 'atao6')
                     style(800, "transform", "scale(1.6)", $('.atao6'))
                     style(2000, "transform", "scale(1.0)", $('.atao6'))
                     style(2800, "transform", "scale(1.6)", $('.atao6'))
                     style(3600, "transform", "scale(1.0)", $('.atao6'))
                 }, 19000)
-                setTimeout(function() {
+                var cam11 =   setTimeout(function() {
                     var text1 = $('.title');
                     creat_div_append('text2', 'container2');
                     creat_text('', 'h4', 'text2', 'h4_item');
@@ -431,7 +452,9 @@
                     $(".atao3").click(number2);
                     $(".atao4").click(number2);
                     $(".atao6").click(number5);
-                    creat_element('button', 'btn-primary', 'container2', 0);
+                    
+                }, 21000)
+                creat_element('button', 'btn-primary', 'container2', 0);
 
                     add_class('button', 'btn', 0);
                     add_class('button', 'prew', 0);
@@ -445,21 +468,48 @@
                     $("img[src='images/atao6.png']").click(number5);
                     var btn_prew = $('#btn-prew')
                     btn_prew.click(function() {
+                        delete_element($('.container2'));
                         delete_element($('div'));
                         delete_element($('h5'));
-                        render();
-
+                        delete_element($('.tao'));
+                        clearTime(cam)
+                        clearTime(cam1)
+                        clearTime(cam2)
+                        clearTime(cam3)
+                        clearTime(cam4)
+                        clearTime(cam5)
+                        clearTime(cam6)
+                        clearTime(cam7)
+                        clearTime(cam8)
+                        clearTime(cam9)
+                        clearTime(cam10)
+                        clearTime(cam11)
+                        render()
                     })
                     var btn_next = $('#btn-next')
                     btn_next.click(function() {
+                        delete_element($('.container2'));
                         delete_element($('div'));
                         delete_element($('h5'));
+                        delete_element($('.tao'));
+                        clearTime(cam)
+                        clearTime(cam1)
+                        clearTime(cam2)
+                        clearTime(cam3)
+                        clearTime(cam4)
+                        clearTime(cam5)
+                        clearTime(cam6)
+                        clearTime(cam7)
+                        clearTime(cam8)
+                        clearTime(cam9)
+                        clearTime(cam10)
+                        clearTime(cam11)
                         render_tau()
                     })
-                }, 21000)
             }
 
             function render_tau() {
+
                 // edit_style($('body'), 'background', '#000');
 
                 music('audio/look-listen.mp3');
@@ -507,7 +557,9 @@
 
 
 
-
+            function clearTime(func)  {
+                return clearTimeout(func)
+            }
             function number3() {
                 atao('row', '3', 'h2_item');
             }
@@ -525,8 +577,8 @@
                 creat_text(text, 'h2', class_append, class_this);
             }
 
-            //render()
-            render_tau()
+            render()
+            // render_tau()
 
 
         })
